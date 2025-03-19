@@ -2,17 +2,17 @@ using system;
 
 class Main
 {
-
+    statitc List<>
 
 }
 
-class Usuario
+class User
 {
     public string name { get; set}
     public string email { get; set}
     public int age { get; set}
 
-    public Usuario(string name, string email, int age)
+    public User(string name, string email, int age)
     {
         this.name = name;
         this.email = email;
