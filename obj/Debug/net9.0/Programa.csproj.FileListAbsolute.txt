@@ -1,0 +1,5 @@
+/home/sharko/automind/obj/Debug/net9.0/Programa.GeneratedMSBuildEditorConfig.editorconfig
+/home/sharko/automind/obj/Debug/net9.0/Programa.AssemblyInfoInputs.cache
+/home/sharko/automind/obj/Debug/net9.0/Programa.AssemblyInfo.cs
+/home/sharko/automind/obj/Debug/net9.0/Programa.csproj.CoreCompileInputs.cache
+/home/sharko/automind/obj/Debug/net9.0/Programa.sourcelink.json
