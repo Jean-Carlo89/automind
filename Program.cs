@@ -1,6 +1,8 @@
 
 
 
+
+
 class Program
 {
     static List<User> users = new List<User>();
@@ -13,6 +15,7 @@ class Program
             Console.WriteLine("\n--- Bem vindo ao Sistema de Usuários ---");
             Console.WriteLine("1. Cadastrar Usuário");
             Console.WriteLine("2. Listar usuários");
+            Console.WriteLine("3. Procurar usuário por nome");
             string chosen_option = Console.ReadLine() ?? "default_value";
 
 
@@ -25,6 +28,10 @@ class Program
 
                 case "2":
                     ListUsers();
+                    break;
+
+                case "3":
+                    SearchUserByName();
                     break;
 
                 case "default_value":
@@ -130,6 +137,30 @@ class Program
             {
                 Console.WriteLine(user);
             }
+        }
+    }
+
+    static void SearchUserByName()
+    {
+        Console.Write("Digite o nome do usuário: ");
+        string search_name = Console.ReadLine() ?? "";
+
+        List<User> found_users = users.FindAll((user => user.name.Equals(search_name)));
+
+
+        if (found_users.Count() > 0)
+        {
+            Console.WriteLine("\nUsuários encontrados:");
+
+            foreach (User user in found_users)
+            {
+                Console.WriteLine(user);
+            }
+
+        }
+        else
+        {
+            Console.WriteLine($"Nenhum usuário encontrado com o nome: {search_name}");
         }
     }
 
