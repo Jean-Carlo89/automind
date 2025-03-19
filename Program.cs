@@ -24,7 +24,7 @@ class Program
                     break;
 
                 case "2":
-                    ListUsrs();
+                    ListUsers();
                     break;
 
                 case "default_value":
@@ -70,7 +70,7 @@ class Program
 
         //-------
 
-        //----------- Idate
+        //----------- Idade
 
 
         string age_input;
@@ -116,7 +116,7 @@ class Program
         Console.WriteLine("Usuário cadastrado!");
     }
 
-    static void ListUsrs()
+    static void ListUsers()
     {
         Console.WriteLine("\n Lista de Usuários ");
 
