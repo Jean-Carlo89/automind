@@ -13,12 +13,18 @@ class Program
             Console.WriteLine("\n--- Bem vindo ao Sistema de Usuários ---");
             Console.WriteLine("1. Cadastrar Usuário");
 
-            string chosen_option = Console.ReadLine();
+            string chosen_option = Console.ReadLine() ?? "default_value";
+
+
 
             switch (chosen_option)
             {
                 case "1":
                     AddUser();
+                    break;
+
+                case "default_value":
+                    Console.WriteLine("Opção inválida. Tente novamente.");
                     break;
 
                 default:
@@ -32,15 +38,34 @@ class Program
     static void AddUser()
     {
         Console.WriteLine("\n  Cadastrar Usuário");
+        //----------
+        string name;
+        do
+        {
+            Console.Write("Nome: ");
+            name = Console.ReadLine() ?? "";
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("Nome inválido. O nome não pode ser vazio. Tente novamente.");
+            }
+        } while (string.IsNullOrWhiteSpace(name));
 
-        Console.Write("Nome: ");
-        string name = Console.ReadLine();
+
+        //--------------
+
 
         Console.Write("E-mail: ");
         string email = Console.ReadLine();
 
         Console.Write("Idade: ");
-        int age = Console.ReadLine();
+
+        string age_input = Console.ReadLine() ?? "0";
+        int age;
+
+        if (!int.TryParse(age_input, out age))
+        {
+            Console.WriteLine("Entrada inválida. Digite um número inteiro.");
+        }
 
         User new_user = new User(name, email, age);
 
@@ -84,7 +109,7 @@ class User
     // returns user info**
     public override string ToString()
     {
-        return $"Nome: {nome}, E-mail: {email}, Idade: {age}";
+        return $"Nome: {this.name}, E-mail: {this.email}, Idade: {this.age}";
     }
 
 }

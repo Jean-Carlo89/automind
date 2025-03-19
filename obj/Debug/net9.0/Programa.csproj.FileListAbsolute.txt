@@ -3,3 +3,13 @@
 /home/sharko/automind/obj/Debug/net9.0/Programa.AssemblyInfo.cs
 /home/sharko/automind/obj/Debug/net9.0/Programa.csproj.CoreCompileInputs.cache
 /home/sharko/automind/obj/Debug/net9.0/Programa.sourcelink.json
+/home/sharko/automind/bin/Debug/net9.0/Programa
+/home/sharko/automind/bin/Debug/net9.0/Programa.deps.json
+/home/sharko/automind/bin/Debug/net9.0/Programa.runtimeconfig.json
+/home/sharko/automind/bin/Debug/net9.0/Programa.dll
+/home/sharko/automind/bin/Debug/net9.0/Programa.pdb
+/home/sharko/automind/obj/Debug/net9.0/Programa.dll
+/home/sharko/automind/obj/Debug/net9.0/refint/Programa.dll
+/home/sharko/automind/obj/Debug/net9.0/Programa.pdb
+/home/sharko/automind/obj/Debug/net9.0/Programa.genruntimeconfig.cache
+/home/sharko/automind/obj/Debug/net9.0/ref/Programa.dll
