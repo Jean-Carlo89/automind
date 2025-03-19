@@ -12,7 +12,7 @@ class Program
         {
             Console.WriteLine("\n--- Bem vindo ao Sistema de Usuários ---");
             Console.WriteLine("1. Cadastrar Usuário");
-
+            Console.WriteLine("2. Listar usuários");
             string chosen_option = Console.ReadLine() ?? "default_value";
 
 
@@ -21,6 +21,10 @@ class Program
             {
                 case "1":
                     AddUser();
+                    break;
+
+                case "2":
+                    ListUsrs();
                     break;
 
                 case "default_value":
@@ -38,7 +42,7 @@ class Program
     static void AddUser()
     {
         Console.WriteLine("\n  Cadastrar Usuário");
-        //----------
+        //---------- Nome
         string name;
         do
         {
@@ -51,21 +55,59 @@ class Program
         } while (string.IsNullOrWhiteSpace(name));
 
 
-        //--------------
+        //-------------- Email
 
-
-        Console.Write("E-mail: ");
-        string email = Console.ReadLine();
-
-        Console.Write("Idade: ");
-
-        string age_input = Console.ReadLine() ?? "0";
-        int age;
-
-        if (!int.TryParse(age_input, out age))
+        string email;
+        do
         {
-            Console.WriteLine("Entrada inválida. Digite um número inteiro.");
-        }
+            Console.Write("Email: ");
+            email = Console.ReadLine() ?? "";
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                Console.WriteLine("Email inválido. O email não pode ser vazio. Tente novamente.");
+            }
+        } while (string.IsNullOrWhiteSpace(email));
+
+        //-------
+
+        //----------- Idate
+
+
+        string age_input;
+
+        int age = 0;
+        bool valid_age = false;
+        do
+        {
+            Console.Write("Idade: ");
+            age_input = Console.ReadLine() ?? "";
+            if (string.IsNullOrWhiteSpace(age_input))
+            {
+                Console.WriteLine("Idade inválido. A idade não pode ser vazio. Tente novamente.");
+                continue;
+            }
+
+
+
+            if (!int.TryParse(age_input, out age))
+            {
+                Console.WriteLine("Entrada inválida. Digite um número inteiro.");
+                continue;
+            }
+
+            if (age <= 0)
+            {
+                Console.WriteLine("Entrada inválida. Digite um número positivo.");
+
+                continue;
+            }
+
+            valid_age = true;
+        } while (!valid_age);
+
+
+
+
 
         User new_user = new User(name, email, age);
 
